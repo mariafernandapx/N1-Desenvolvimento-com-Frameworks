@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles4.css">
+    <title>Forma de Pagamento</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="site-name">Vinhos.com</h3>
+        <h2>Selecione a Forma de Pagamento</h2>
+
+        <div class="total-display">
+            <p>Valor Total: <span id="totalAmount">R$ 0,00</span></p>
+        </div>
+
+        <div class="payment-options">
+            <h3>Escolha uma opção de pagamento:</h3>
+            <label>
+                <input type="radio" name="paymentMethod" value="cartaoDebito"> Cartão de Débito
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="paymentMethod" value="cartaoCredito"> Cartão de Crédito
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="paymentMethod" value="boleto"> Boleto
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="paymentMethod" value="pix"> Pix
+            </label>
+        </div>
+
+        <div class="finalize-button">
+            <button id="confirmPaymentButton">Continuar</button>
+        </div>
+    </div>
+
+    <script>
+        // Recupera o total armazenado no localStorage e exibe na página
+        const totalAmount = localStorage.getItem('total') || '0.00';
+        document.getElementById('totalAmount').innerText = `R$ ${parseFloat(totalAmount).toFixed(2)}`;
+
+        // Redireciona para a página de pagamento ao clicar em "Continuar"
+        document.getElementById('confirmPaymentButton').addEventListener('click', () => {
+            localStorage.setItem('total', totalAmount); // Armazena o total no localStorage
+            window.location.href = 'pagamento.html'; // Redireciona para a página de pagamento
+        });
+    </script>
+
+</body>
+
+</html>

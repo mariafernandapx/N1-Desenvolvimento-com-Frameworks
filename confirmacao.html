@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles6.css">
+    <title>Confirmação da Compra</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="site-name">Vinhos.com</h3>
+        <h2>Confirmação da Compra</h2>
+
+        <div id="confirmationDetails"></div>
+        <div class="success-message">
+            <p>A compra foi realizada com sucesso!</p>
+        </div>
+    </div>
+
+    <script>
+        // Recupera os dados da compra do localStorage
+        const paymentData = JSON.parse(localStorage.getItem('paymentData'));
+        
+        if (paymentData) {
+            const { cardBrand, totalAmount, selectedWines } = paymentData;
+
+            // Exibir os detalhes da compra
+            let confirmationHTML = `<h3>Detalhes do Pagamento:</h3>
+                                    <p><strong>Bandeira do Cartão:</strong> ${cardBrand}</p>
+                                    <p><strong>Valor Total:</strong> R$ ${parseFloat(totalAmount).toFixed(2)}</p>`;
+
+            confirmationHTML += `<h3>Produtos Selecionados:</h3><ul>`;
+            selectedWines.forEach(wine => {
+                confirmationHTML += `<li>${wine.name} - R$ ${parseFloat(wine.price).toFixed(2)}</li>`;
+            });
+            confirmationHTML += `</ul>`;
+
+            document.getElementById('confirmationDetails').innerHTML = confirmationHTML;
+        } else {
+            document.getElementById('confirmationDetails').innerHTML = `<p>Nenhum dado de pagamento encontrado.</p>`;
+        }
+    </script>
+
+</body>
+
+</html>

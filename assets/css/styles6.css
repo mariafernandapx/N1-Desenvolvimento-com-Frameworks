@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #e9d5ff; /* Fundo lilás claro */
+    color: #333; /* Cor do texto */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px; /* Largura máxima da página */
+    margin: auto; /* Centraliza a página */
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #fff; /* Fundo branco para o container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.site-name {
+    text-align: center; /* Centraliza o título do site */
+    font-size: 24px; /* Tamanho do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+h2 {
+    text-align: center; /* Centraliza o subtítulo */
+    font-size: 20px; /* Tamanho do texto do subtítulo */
+    margin-bottom: 20px; /* Espaçamento abaixo do subtítulo */
+}
+
+h3 {
+    margin-top: 20px; /* Espaçamento acima de headings menores */
+    margin-bottom: 10px; /* Espaçamento abaixo de headings menores */
+}
+
+p {
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+}
+
+.success-message {
+    background-color: #DFF2BF; /* Fundo verde claro para a mensagem de sucesso */
+    border: 1px solid #4F8A10; /* Borda verde */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza a mensagem de sucesso */
+    margin-top: 20px; /* Espaçamento acima da mensagem */
+}
+
+ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove preenchimento da lista */
+}
+
+li {
+    padding: 10px; /* Espaçamento interno das listas */
+    border-bottom: 1px solid #ccc; /* Linha separadora entre itens da lista */
+}
+
+li:last-child {
+    border-bottom: none; /* Remove a linha do último item da lista */
+}

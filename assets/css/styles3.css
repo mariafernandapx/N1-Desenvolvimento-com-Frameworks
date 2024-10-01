@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    background-color: #e9d5ff; /* Cor lilás para o fundo */
+        font-family: 'Inter', sans-serif;
+}
+
+.products-header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.product-card {
+    background-color: #fff; /* Cor de fundo do card */
+    border: 2px solid #000; /* Margem preta ao redor do card */
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    width: calc(20% - 2rem); /* 5 cards por linha */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h4 {
+    margin: 0.5rem 0;
+}
+
+.promotions-container {
+    background-color: #f9f9f9; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+
+.finalize-button {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.finalize-button button {
+    border: none;
+    background-color: #6c63ff;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.finalize-button button:hover {
+    background-color: #6b63fff1;
+}
+
+.finalize-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}

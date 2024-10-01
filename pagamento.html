@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles5.css"> 
+    <title>Página de Pagamento</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="site-name">Vinhos.com</h3>
+        <h2>Dados de Pagamento</h2>
+
+        <div class="payment-details">
+            <label for="cardBrand">Bandeira do Cartão:</label>
+            <select id="cardBrand">
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="American Express">American Express</option>
+            </select>
+            <br>
+
+            <label for="cardNumber">Número do Cartão:</label>
+            <input type="text" id="cardNumber" required>
+            <br>
+
+            <label for="expiryDate">Data de Expiração:</label>
+            <input type="text" id="expiryDate" placeholder="MM/AA" required>
+            <br>
+
+            <label for="securityCode">Código de Segurança:</label>
+            <input type="text" id="securityCode" required>
+            <br>
+        </div>
+
+        <div class="finalize-button">
+            <button id="finalizeButton">Finalizar</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('finalizeButton').addEventListener('click', () => {
+            // Captura os dados do pagamento
+            const cardBrand = document.getElementById('cardBrand').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const securityCode = document.getElementById('securityCode').value;
+
+            // Recupera os dados da compra
+            const totalAmount = localStorage.getItem('total') || '0.00';
+            const selectedWines = JSON.parse(localStorage.getItem('selectedWines')) || [];
+
+            // Armazena os dados no localStorage para a próxima página
+            localStorage.setItem('paymentData', JSON.stringify({
+                cardBrand,
+                cardNumber,
+                expiryDate,
+                securityCode,
+                totalAmount,
+                selectedWines
+            }));
+
+            // Redireciona para a página de confirmação
+            window.location.href = 'confirmacao.html';
+        });
+    </script>
+
+</body>
+
+</html>

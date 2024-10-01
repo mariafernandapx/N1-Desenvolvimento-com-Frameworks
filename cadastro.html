@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <form id="cadastroForm" action="index.html" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                        <h3>Vinhos.com</h3>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <!-- Nome -->
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <!-- Data de Nascimento -->
+                    <div class="input-box">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" required>
+                    </div>
+
+                    <!-- Endereço: Logradouro -->
+                    <div class="input-box">
+                        <label for="logradouro">Logradouro</label>
+                        <input id="logradouro" type="text" name="logradouro" placeholder="Digite o logradouro" required>
+                    </div>
+
+                    <!-- Número -->
+                    <div class="input-box">
+                        <label for="numero">Número</label>
+                        <input id="numero" type="text" name="numero" placeholder="Digite o número" required>
+                    </div>
+
+                    <!-- Quadra -->
+                    <div class="input-box">
+                        <label for="quadra">Quadra</label>
+                        <input id="quadra" type="text" name="quadra" placeholder="Digite a quadra">
+                    </div>
+
+                    <!-- Lote -->
+                    <div class="input-box">
+                        <label for="lote">Lote</label>
+                        <input id="lote" type="text" name="lote" placeholder="Digite o lote">
+                    </div>
+
+                    <!-- Bairro -->
+                    <div class="input-box">
+                        <label for="bairro">Bairro</label>
+                        <input id="bairro" type="text" name="bairro" placeholder="Digite o bairro" required>
+                    </div>
+
+                    <!-- CEP -->
+                    <div class="input-box">
+                        <label for="cep">CEP</label>
+                        <input id="cep" type="text" name="cep" placeholder="Digite o CEP" required>
+                    </div>
+
+                    <!-- Cidade -->
+                    <div class="input-box">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" type="text" name="cidade" placeholder="Digite a cidade" required>
+                    </div>
+
+                    <!-- Estado -->
+                    <div class="input-box">
+                        <label for="estado">Estado</label>
+                        <input id="estado" type="text" name="estado" placeholder="Digite o estado" required>
+                    </div>
+                </div>
+
+                <!-- Botão Salvar -->
+                <div class="save-button">
+                    <button type="submit" onclick="redirectToLogin()">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function redirectToLogin() {
+            // Após salvar, redireciona o usuário para a página de login
+            document.getElementById('cadastroForm').addEventListener('submit', function (e) {
+                e.preventDefault(); // Evita o envio padrão do formulário
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+</body>
+
+</html>
